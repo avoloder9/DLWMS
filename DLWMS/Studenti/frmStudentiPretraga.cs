@@ -40,11 +40,19 @@ namespace DLWMS.WinForms.Studenti
         private void dgvStudenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var odabraniStudent = dgvStudenti.SelectedRows[0].DataBoundItem as Student;
-
+            //Text = $"Red: {e.RowIndex} Kolona: {e.ColumnIndex}";
+            Form forma = null;
             if (odabraniStudent != null)
             {
-                var frmStudent = new frmStudentNovi(odabraniStudent);
-                frmStudent.ShowDialog();
+                if (dgvStudenti.CurrentCell is DataGridViewButtonCell)
+                    forma = new frmStudentiPredmeti(odabraniStudent);
+                else
+
+                 forma = new frmStudentNovi(odabraniStudent);
+
+
+
+                forma.ShowDialog();
                 UcitajStudente();
 
                 //var modifikujStudenta = new frmStudentiNovi();

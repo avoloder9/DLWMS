@@ -10,6 +10,8 @@
         public const string ObaveznaVrijednost = "ObaveznaVrijednost";
         public const string PodaciUspjesnoDodati = "PodaciUspjesnoDodati";
         public const string PodaciUspjesnoModifikovani = "PodaciUspjesnoModifikovani";
+        public const string PodatakVecPostoji = "PodatakVecPostoji";
+
 
     }
 }

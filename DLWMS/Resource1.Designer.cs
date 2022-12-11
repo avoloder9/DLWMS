@@ -122,5 +122,14 @@ namespace DLWMS.WinForms {
                 return ResourceManager.GetString("PodaciUspjesnoModifikovani", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Podatak {0} je vec dodat.
+        /// </summary>
+        internal static string PodatakVecPostoji {
+            get {
+                return ResourceManager.GetString("PodatakVecPostoji", resourceCulture);
+            }
+        }
     }
 }

@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvStudenti = new System.Windows.Forms.DataGridView();
+            this.txtPretraga = new System.Windows.Forms.TextBox();
+            this.btnDodajStudenta = new System.Windows.Forms.Button();
             this.BrojIndeksa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumRodjenja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aktivan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtPretraga = new System.Windows.Forms.TextBox();
-            this.btnDodajStudenta = new System.Windows.Forms.Button();
+            this.Predmeti = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@
             this.Prezime,
             this.Email,
             this.DatumRodjenja,
-            this.Aktivan});
+            this.Aktivan,
+            this.Predmeti});
             this.dgvStudenti.Location = new System.Drawing.Point(20, 50);
             this.dgvStudenti.Name = "dgvStudenti";
             this.dgvStudenti.ReadOnly = true;
@@ -60,6 +62,24 @@
             this.dgvStudenti.Size = new System.Drawing.Size(743, 150);
             this.dgvStudenti.TabIndex = 3;
             this.dgvStudenti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudenti_CellContentClick);
+            // 
+            // txtPretraga
+            // 
+            this.txtPretraga.Location = new System.Drawing.Point(20, 22);
+            this.txtPretraga.Name = "txtPretraga";
+            this.txtPretraga.Size = new System.Drawing.Size(627, 23);
+            this.txtPretraga.TabIndex = 5;
+            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
+            // 
+            // btnDodajStudenta
+            // 
+            this.btnDodajStudenta.Location = new System.Drawing.Point(653, 21);
+            this.btnDodajStudenta.Name = "btnDodajStudenta";
+            this.btnDodajStudenta.Size = new System.Drawing.Size(110, 23);
+            this.btnDodajStudenta.TabIndex = 4;
+            this.btnDodajStudenta.Text = "Dodaj studenta";
+            this.btnDodajStudenta.UseVisualStyleBackColor = true;
+            this.btnDodajStudenta.Click += new System.EventHandler(this.btnDodajStudenta_Click);
             // 
             // BrojIndeksa
             // 
@@ -107,23 +127,13 @@
             this.Aktivan.Name = "Aktivan";
             this.Aktivan.ReadOnly = true;
             // 
-            // txtPretraga
+            // Predmeti
             // 
-            this.txtPretraga.Location = new System.Drawing.Point(20, 22);
-            this.txtPretraga.Name = "txtPretraga";
-            this.txtPretraga.Size = new System.Drawing.Size(627, 23);
-            this.txtPretraga.TabIndex = 5;
-            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
-            // 
-            // btnDodajStudenta
-            // 
-            this.btnDodajStudenta.Location = new System.Drawing.Point(653, 21);
-            this.btnDodajStudenta.Name = "btnDodajStudenta";
-            this.btnDodajStudenta.Size = new System.Drawing.Size(110, 23);
-            this.btnDodajStudenta.TabIndex = 4;
-            this.btnDodajStudenta.Text = "Dodaj studenta";
-            this.btnDodajStudenta.UseVisualStyleBackColor = true;
-            this.btnDodajStudenta.Click += new System.EventHandler(this.btnDodajStudenta_Click);
+            this.Predmeti.HeaderText = "";
+            this.Predmeti.Name = "Predmeti";
+            this.Predmeti.ReadOnly = true;
+            this.Predmeti.Text = "Polozeni";
+            this.Predmeti.UseColumnTextForButtonValue = true;
             // 
             // frmStudentiPretraga
             // 
@@ -145,13 +155,14 @@
         #endregion
 
         private DataGridView dgvStudenti;
+        private TextBox txtPretraga;
+        private Button btnDodajStudenta;
         private DataGridViewTextBoxColumn BrojIndeksa;
         private DataGridViewTextBoxColumn Ime;
         private DataGridViewTextBoxColumn Prezime;
         private DataGridViewTextBoxColumn Email;
         private DataGridViewTextBoxColumn DatumRodjenja;
         private DataGridViewCheckBoxColumn Aktivan;
-        private TextBox txtPretraga;
-        private Button btnDodajStudenta;
+        private DataGridViewButtonColumn Predmeti;
     }
 }

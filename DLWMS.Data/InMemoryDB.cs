@@ -8,6 +8,26 @@ namespace DLWMS.Data
         public static List<Korisnik> Korisnici = GenerisiKorisnike();
         public static List<Student> Studenti = GenerisiStudente();
         public static List<GodinaStudija> GodineStudija = GenerisiGodineStudija();
+        public static List<Spol> Spolovi = GenerisiSpolove();
+        public static List<Predmet> Predmeti = GenerisiPredmete();
+
+        private static List<Predmet> GenerisiPredmete()
+        {
+            return new List<Predmet>() {
+                    new Predmet()  { Id = 1, Naziv="Programiranje III"},
+                    new Predmet()  { Id = 2, Naziv="Matematika III" },
+                    new Predmet()  { Id = 3, Naziv="Marketing" }
+            };
+        }
+
+        private static List<Spol> GenerisiSpolove()
+        {
+            return new List<Spol>() {
+                    new Spol()  { Id = 1, Naziv="*******"},
+                    new Spol()  { Id = 2, Naziv="Zenski" },
+                    new Spol()  { Id = 3, Naziv="Muski" }                   
+            };
+        }
 
         private static List<GodinaStudija> GenerisiGodineStudija()
         {

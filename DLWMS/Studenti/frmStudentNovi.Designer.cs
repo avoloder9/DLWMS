@@ -55,6 +55,8 @@
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbSpol = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSlikaStudenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -115,7 +117,7 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(552, 415);
+            this.btnSacuvaj.Location = new System.Drawing.Point(552, 450);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(111, 23);
             this.btnSacuvaj.TabIndex = 21;
@@ -133,7 +135,7 @@
             this.groupBox1.Controls.Add(this.cbAktivan);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtLozinka);
-            this.groupBox1.Location = new System.Drawing.Point(237, 280);
+            this.groupBox1.Location = new System.Drawing.Point(237, 307);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(426, 129);
             this.groupBox1.TabIndex = 19;
@@ -271,6 +273,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.cmbSpol);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.cmbGodinaStudija);
             this.groupBox2.Controls.Add(this.label8);
@@ -281,7 +285,7 @@
             this.groupBox2.Controls.Add(this.txtPrezime);
             this.groupBox2.Location = new System.Drawing.Point(237, 126);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 148);
+            this.groupBox2.Size = new System.Drawing.Size(426, 173);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o studentu";
@@ -290,11 +294,29 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Spol";
+            // 
+            // cmbSpol
+            // 
+            this.cmbSpol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSpol.FormattingEnabled = true;
+            this.cmbSpol.Location = new System.Drawing.Point(103, 144);
+            this.cmbSpol.Name = "cmbSpol";
+            this.cmbSpol.Size = new System.Drawing.Size(193, 23);
+            this.cmbSpol.TabIndex = 17;
+            // 
             // frmStudentNovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 450);
+            this.ClientSize = new System.Drawing.Size(688, 494);
             this.Controls.Add(this.pbSlikaStudenta);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -344,5 +366,7 @@
         private TextBox txtPrezime;
         private GroupBox groupBox2;
         private ErrorProvider err;
+        private Label label1;
+        private ComboBox cmbSpol;
     }
 }
