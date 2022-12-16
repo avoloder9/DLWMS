@@ -39,7 +39,7 @@ namespace DLWMS.WinForms.Studenti
 
         private void UcitajPodatkeOStudentu()
         {
-            pbSlika.Image = odabraniStudent.Slika;
+            pbSlika.Image =ImageHelper.FromByteToImage(odabraniStudent.Slika);
             lblImePrezime.Text = $"{odabraniStudent.Ime} {odabraniStudent.Prezime}";
             lblIndeks.Text = $"{odabraniStudent.BrojIndeksa}";
         }

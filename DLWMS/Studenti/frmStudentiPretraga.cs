@@ -13,6 +13,7 @@ namespace DLWMS.WinForms.Studenti
 {
     public partial class frmStudentiPretraga : Form
     {
+        DLWMSDbContext db = new DLWMSDbContext();
         public frmStudentiPretraga()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace DLWMS.WinForms.Studenti
         private void UcitajStudente(List<Student> studenti = null)
         {
             dgvStudenti.DataSource = null;
-            dgvStudenti.DataSource = studenti ?? InMemoryDB.Studenti;
+            dgvStudenti.DataSource = studenti ?? db.Studenti.ToList();
         }
 
         private void btnDodajStudenta_Click(object sender, EventArgs e)
@@ -36,7 +37,6 @@ namespace DLWMS.WinForms.Studenti
             if (frmStudent.ShowDialog() == DialogResult.OK)
                 UcitajStudente();
         }
-
         private void dgvStudenti_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var odabraniStudent = dgvStudenti.SelectedRows[0].DataBoundItem as Student;
@@ -47,10 +47,7 @@ namespace DLWMS.WinForms.Studenti
                 if (dgvStudenti.CurrentCell is DataGridViewButtonCell)
                     forma = new frmStudentiPredmeti(odabraniStudent);
                 else
-
                  forma = new frmStudentNovi(odabraniStudent);
-
-
 
                 forma.ShowDialog();
                 UcitajStudente();
@@ -63,16 +60,32 @@ namespace DLWMS.WinForms.Studenti
 
         private void txtPretraga_TextChanged(object sender, EventArgs e)
         {
-            var pretraga = txtPretraga.Text.ToLower();
-            var rezultat = new List<Student>();
+            //ver4
+            //UcitajStudente(InMemoryDB.Studenti.Where(FiltrirajStudente).ToList());
+            UcitajStudente(db.Studenti.Where(FiltrirajStudente).ToList());
 
-            foreach (var student in InMemoryDB.Studenti)
-            {
-                if (student.Ime.ToLower().Contains(pretraga) || student.Prezime.ToLower().Contains(pretraga)
-                    || student.BrojIndeksa.ToLower().Contains(pretraga))
-                    rezultat.Add(student);
-            }
-            UcitajStudente(rezultat);
+            //var pretraga = txtPretraga.Text.ToLower();
+            //var rezGodine3 = godineStudija.Where(godina => godina.Aktivna == true);
+            //ver3 
+            //UcitajStudente(InMemoryDB.Studenti.Where(FiltrirajStudente).ToList());
+
+            //ver2
+            //var rezultat = InMemoryDB.Studenti.Where(FiltrirajStudente).ToList(); 
+
+            //ver1
+            //var rezultat = InMemoryDB.Studenti.Where(student => 
+            //            student.Ime.ToLower().Contains(pretraga) ||
+            //            student.Prezime.ToLower().Contains(pretraga) || 
+            //            student.BrojIndeksa.ToLower().Contains(pretraga)).ToList();
+
+            //UcitajStudente(rezultat);
+        }
+        private bool FiltrirajStudente(Student student)
+        {
+            var pretraga = txtPretraga.Text.ToLower();
+            return student.Ime.ToLower().Contains(pretraga) ||
+                        student.Prezime.ToLower().Contains(pretraga) ||
+                        student.BrojIndeksa.ToLower().Contains(pretraga);
         }
     }
 }
