@@ -3,9 +3,25 @@ using System.Drawing;
 
 namespace DLWMS.Data
 {
+    [Table("Uloge")]
+    public class Uloga
+    {
+        public int Id { get; set; }
+        public string Naziv { get; set; }
+        public ICollection<Student> Student { get; set; }
+    
+        public Uloga() 
+        { 
+             Student= new HashSet<Student>();
+        }
+    }
+
 
     public partial class Student
     {
+
+        public ICollection<Uloga> Uloga { get; set; }
+
         public int Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
@@ -16,12 +32,13 @@ namespace DLWMS.Data
         public int GodinaStudija { get; set; }
         public byte[] Slika { get; set; }//byte[]
         public bool Aktivan { get; set; }
-        [NotMapped]
+        //public int SpolId { get; set; }
         public Spol Spol { get; set; }
-        public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
+        public List<StudentPredmet> PolozeniPredmeti { get; set; }
         public Student()
         {
-            PolozeniPredmeti = new List<PolozeniPredmet>();
+            PolozeniPredmeti = new List<StudentPredmet>();
+            Uloga=new HashSet<Uloga>();
         }
         public override string ToString()
         {

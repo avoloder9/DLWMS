@@ -54,14 +54,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSpol = new System.Windows.Forms.ComboBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDodajUlogu = new System.Windows.Forms.Button();
+            this.dgvUloge = new System.Windows.Forms.DataGridView();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbUloge = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSlikaStudenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUloge)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -117,7 +124,7 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(552, 450);
+            this.btnSacuvaj.Location = new System.Drawing.Point(901, 459);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(111, 23);
             this.btnSacuvaj.TabIndex = 21;
@@ -290,10 +297,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o studentu";
             // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -312,11 +315,65 @@
             this.cmbSpol.Size = new System.Drawing.Size(193, 23);
             this.cmbSpol.TabIndex = 17;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnDodajUlogu);
+            this.groupBox3.Controls.Add(this.dgvUloge);
+            this.groupBox3.Controls.Add(this.cmbUloge);
+            this.groupBox3.Location = new System.Drawing.Point(687, 134);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(325, 302);
+            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Uloge";
+            // 
+            // btnDodajUlogu
+            // 
+            this.btnDodajUlogu.Location = new System.Drawing.Point(199, 32);
+            this.btnDodajUlogu.Name = "btnDodajUlogu";
+            this.btnDodajUlogu.Size = new System.Drawing.Size(116, 23);
+            this.btnDodajUlogu.TabIndex = 26;
+            this.btnDodajUlogu.Text = "Dodaj ulogu";
+            this.btnDodajUlogu.UseVisualStyleBackColor = true;
+            this.btnDodajUlogu.Click += new System.EventHandler(this.btnDodajUlogu_Click);
+            // 
+            // dgvUloge
+            // 
+            this.dgvUloge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUloge.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Naziv});
+            this.dgvUloge.Location = new System.Drawing.Point(16, 89);
+            this.dgvUloge.Name = "dgvUloge";
+            this.dgvUloge.RowTemplate.Height = 25;
+            this.dgvUloge.Size = new System.Drawing.Size(299, 106);
+            this.dgvUloge.TabIndex = 27;
+            // 
+            // Naziv
+            // 
+            this.Naziv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Uloga";
+            this.Naziv.Name = "Naziv";
+            // 
+            // cmbUloge
+            // 
+            this.cmbUloge.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUloge.FormattingEnabled = true;
+            this.cmbUloge.Location = new System.Drawing.Point(16, 33);
+            this.cmbUloge.Name = "cmbUloge";
+            this.cmbUloge.Size = new System.Drawing.Size(162, 23);
+            this.cmbUloge.TabIndex = 19;
+            // 
             // frmStudentNovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 494);
+            this.ClientSize = new System.Drawing.Size(1036, 494);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pbSlikaStudenta);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -334,6 +391,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUloge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +427,10 @@
         private ErrorProvider err;
         private Label label1;
         private ComboBox cmbSpol;
+        private GroupBox groupBox3;
+        private Button btnDodajUlogu;
+        private DataGridView dgvUloge;
+        private DataGridViewTextBoxColumn Naziv;
+        private ComboBox cmbUloge;
     }
 }

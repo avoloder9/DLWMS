@@ -16,7 +16,7 @@ namespace DLWMS.WinForms.Studenti
     public partial class frmStudentiPredmeti : Form
     {
         private Student odabraniStudent;
-
+        DLWMSDbContext db=new DLWMSDbContext();
         public frmStudentiPredmeti(Student odabraniStudent)
         {
             InitializeComponent();
@@ -34,7 +34,8 @@ namespace DLWMS.WinForms.Studenti
 
         private void UcitajPredmete()
         {
-            cmbPredmeti.DataSource = InMemoryDB.Predmeti;
+            //cmbPredmeti.DataSource = InMemoryDB.Predmeti;
+            DataLoader.ToComboBox(cmbPredmeti, db.Predmeti.ToList());
         }
 
         private void UcitajPodatkeOStudentu()
@@ -47,7 +48,8 @@ namespace DLWMS.WinForms.Studenti
         private void UcitajPolozenePredmete()
         {
             var binding = new BindingSource();
-            binding.DataSource = odabraniStudent.PolozeniPredmeti;
+            binding.DataSource = db.StudentiPredmeti.Where
+               (polozeni => polozeni.StudentId == odabraniStudent.Id).ToList(); ;
             //dgvPolozeniPredmeti.DataSource = null;
             dgvPolozeniPredmeti.DataSource = binding;
             //dgvPolozeniPredmeti.DataSource = odabraniStudent.PolozeniPredmeti;
@@ -68,14 +70,16 @@ namespace DLWMS.WinForms.Studenti
                     MessageBox.Show(ispis, "Informacija", MessageBoxButtons.OK, MessageBoxIcon.Information);//<<<<<
                     return;
                 }
-                var polozeni = new PolozeniPredmet()
+                var polozeni = new StudentPredmet()
                 {
-                    Id = odabraniStudent.PolozeniPredmeti.Count() + 1,
+                    //Id = odabraniStudent.PolozeniPredmeti.Count() + 1,
                     Datum = dtpDatumPolaganja.Value,
                     Ocjena = int.Parse(cmbOcjene.Text),
-                    Predmet=predmet
+                    PredmetId = predmet.Id,
+                    StudentId=odabraniStudent.Id
                 };
-                odabraniStudent.PolozeniPredmeti.Add(polozeni);
+               db.StudentiPredmeti.Add(polozeni);
+                db.SaveChanges();
                 UcitajPolozenePredmete();
             }
         }
@@ -84,8 +88,9 @@ namespace DLWMS.WinForms.Studenti
         {
             
             var odabraniPredmet = cmbPredmeti.SelectedItem as Predmet;
-            return odabraniStudent.PolozeniPredmeti.Where
-                ( polozeni => polozeni.Predmet.Id == odabraniPredmet.Id).Count() > 0;
+            return db.StudentiPredmeti.Where
+                ( polozeni => polozeni.PredmetId == odabraniPredmet.Id && 
+                polozeni.StudentId==odabraniStudent.Id).Count() > 0;
             
         }
 
