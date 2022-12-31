@@ -30,7 +30,6 @@ namespace DLWMS.Data
         public DbSet<Student> Studenti { get; set; }
         public DbSet<Spol> Spolovi { get; set; }
         public DbSet<StudentPredmet> StudentiPredmeti{ get; set; }
-
         public DbSet<Uloga> Uloge { get; set; }
 
     }

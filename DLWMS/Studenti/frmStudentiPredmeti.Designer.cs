@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPolozeniPredmeti = new System.Windows.Forms.DataGridView();
+            this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obrisi = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pbSlika = new System.Windows.Forms.PictureBox();
             this.lblImePrezime = new System.Windows.Forms.Label();
             this.lblIndeks = new System.Windows.Forms.Label();
@@ -38,10 +42,7 @@
             this.dtpDatumPolaganja = new System.Windows.Forms.DateTimePicker();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obrisi = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnPrintaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
@@ -65,6 +66,37 @@
             this.dgvPolozeniPredmeti.TabIndex = 0;
             this.dgvPolozeniPredmeti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPolozeniPredmeti_CellContentClick);
             // 
+            // Predmet
+            // 
+            this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Predmet.DataPropertyName = "Predmet";
+            this.Predmet.HeaderText = "Predmet";
+            this.Predmet.Name = "Predmet";
+            this.Predmet.ReadOnly = true;
+            // 
+            // Datum
+            // 
+            this.Datum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Datum.DataPropertyName = "Datum";
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
+            // 
+            // Ocjena
+            // 
+            this.Ocjena.DataPropertyName = "Ocjena";
+            this.Ocjena.HeaderText = "Ocjena";
+            this.Ocjena.Name = "Ocjena";
+            this.Ocjena.ReadOnly = true;
+            // 
+            // Obrisi
+            // 
+            this.Obrisi.HeaderText = "";
+            this.Obrisi.Name = "Obrisi";
+            this.Obrisi.ReadOnly = true;
+            this.Obrisi.Text = "Obriši";
+            this.Obrisi.UseColumnTextForButtonValue = true;
+            // 
             // pbSlika
             // 
             this.pbSlika.Location = new System.Drawing.Point(24, 36);
@@ -80,9 +112,8 @@
             this.lblImePrezime.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblImePrezime.Location = new System.Drawing.Point(171, 47);
             this.lblImePrezime.Name = "lblImePrezime";
-            this.lblImePrezime.Size = new System.Drawing.Size(90, 37);
+            this.lblImePrezime.Size = new System.Drawing.Size(0, 37);
             this.lblImePrezime.TabIndex = 2;
-            this.lblImePrezime.Text = "label1";
             // 
             // lblIndeks
             // 
@@ -90,9 +121,8 @@
             this.lblIndeks.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIndeks.Location = new System.Drawing.Point(171, 107);
             this.lblIndeks.Name = "lblIndeks";
-            this.lblIndeks.Size = new System.Drawing.Size(90, 37);
+            this.lblIndeks.Size = new System.Drawing.Size(0, 37);
             this.lblIndeks.TabIndex = 3;
-            this.lblIndeks.Text = "label2";
             // 
             // cmbPredmeti
             // 
@@ -139,42 +169,22 @@
             // 
             this.err.ContainerControl = this;
             // 
-            // Predmet
+            // btnPrintaj
             // 
-            this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Predmet.DataPropertyName = "Predmet";
-            this.Predmet.HeaderText = "Predmet";
-            this.Predmet.Name = "Predmet";
-            this.Predmet.ReadOnly = true;
-            // 
-            // Datum
-            // 
-            this.Datum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Datum.DataPropertyName = "Datum";
-            this.Datum.HeaderText = "Datum";
-            this.Datum.Name = "Datum";
-            this.Datum.ReadOnly = true;
-            // 
-            // Ocjena
-            // 
-            this.Ocjena.DataPropertyName = "Ocjena";
-            this.Ocjena.HeaderText = "Ocjena";
-            this.Ocjena.Name = "Ocjena";
-            this.Ocjena.ReadOnly = true;
-            // 
-            // Obrisi
-            // 
-            this.Obrisi.HeaderText = "";
-            this.Obrisi.Name = "Obrisi";
-            this.Obrisi.ReadOnly = true;
-            this.Obrisi.Text = "Obriši";
-            this.Obrisi.UseColumnTextForButtonValue = true;
+            this.btnPrintaj.Location = new System.Drawing.Point(499, 377);
+            this.btnPrintaj.Name = "btnPrintaj";
+            this.btnPrintaj.Size = new System.Drawing.Size(110, 23);
+            this.btnPrintaj.TabIndex = 8;
+            this.btnPrintaj.Text = "Printaj uvjerenje";
+            this.btnPrintaj.UseVisualStyleBackColor = true;
+            this.btnPrintaj.Click += new System.EventHandler(this.btnPrintaj_Click);
             // 
             // frmStudentiPredmeti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 377);
+            this.ClientSize = new System.Drawing.Size(633, 409);
+            this.Controls.Add(this.btnPrintaj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dtpDatumPolaganja);
             this.Controls.Add(this.cmbOcjene);
@@ -209,5 +219,6 @@
         private DataGridViewTextBoxColumn Datum;
         private DataGridViewTextBoxColumn Ocjena;
         private DataGridViewButtonColumn Obrisi;
+        private Button btnPrintaj;
     }
 }

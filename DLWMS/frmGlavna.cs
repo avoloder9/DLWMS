@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLWMS.WinForms.Studenti;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,18 @@ namespace DLWMS.WinForms
         private void frmGlavna_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void studentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var studentiPretraga = new Studenti.frmStudentiPretraga();
+            studentiPretraga.MdiParent = this;
+            studentiPretraga.Show();
+        }
+
+        private void krajRadaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
