@@ -34,5 +34,12 @@ namespace DLWMS.WinForms
         {
             Application.Exit();
         }
+
+        private void pingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ping = new Asinhrono.frmPing();
+            ping.MdiParent = this;
+            ping.Show();
+        }
     }
 }

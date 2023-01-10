@@ -1,3 +1,5 @@
+using DLWMS.WinForms.Asinhrono;
+
 namespace DLWMS.WinForms
 {
     internal static class Program

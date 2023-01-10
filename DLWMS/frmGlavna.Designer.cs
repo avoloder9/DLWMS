@@ -33,6 +33,7 @@
             this.studentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.krajRadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentiToolStripMenuItem,
+            this.pingToolStripMenuItem,
             this.toolStripSeparator1,
             this.krajRadaToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -74,6 +76,13 @@
             this.krajRadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.krajRadaToolStripMenuItem.Text = "Kraj rada";
             this.krajRadaToolStripMenuItem.Click += new System.EventHandler(this.krajRadaToolStripMenuItem_Click);
+            // 
+            // pingToolStripMenuItem
+            // 
+            this.pingToolStripMenuItem.Name = "pingToolStripMenuItem";
+            this.pingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pingToolStripMenuItem.Text = "Ping";
+            this.pingToolStripMenuItem.Click += new System.EventHandler(this.pingToolStripMenuItem_Click);
             // 
             // frmGlavna
             // 
@@ -100,5 +109,6 @@
         private ToolStripMenuItem studentiToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem krajRadaToolStripMenuItem;
+        private ToolStripMenuItem pingToolStripMenuItem;
     }
 }
