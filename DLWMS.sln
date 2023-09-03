@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLWMS.WinForms", "DLWMS\DLWMS.WinForms.csproj", "{725EF16B-BA2E-4535-A415-C8CBD6216C45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DLWMS.WinForms", "DLWMS\DLWMS.WinForms.csproj", "{725EF16B-BA2E-4535-A415-C8CBD6216C45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLWMS.Data", "DLWMS.Data\DLWMS.Data.csproj", "{A920ADF6-6668-4665-B6D9-74F51088AE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DLWMS.Data", "DLWMS.Data\DLWMS.Data.csproj", "{A920ADF6-6668-4665-B6D9-74F51088AE8B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DLWMS.Setup", "DLWMS.Setup\DLWMS.Setup.vdproj", "{C4D5ADEB-FB62-447C-8851-888018F1E3BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{A920ADF6-6668-4665-B6D9-74F51088AE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A920ADF6-6668-4665-B6D9-74F51088AE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A920ADF6-6668-4665-B6D9-74F51088AE8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D5ADEB-FB62-447C-8851-888018F1E3BD}.Debug|Any CPU.ActiveCfg = Debug
+		{C4D5ADEB-FB62-447C-8851-888018F1E3BD}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

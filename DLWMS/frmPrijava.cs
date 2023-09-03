@@ -37,10 +37,14 @@ namespace DLWMS.WinForms
                                 MessageBoxIcon.Information);
                             DLWMSApp.Korisnik = korisnik;
 
+                            this.Hide();
 
-                            new frmGlavna().Show();
-
-
+                            var glavna = new frmGlavna();
+                            if (glavna.ShowDialog() == DialogResult.OK)
+                                
+                                this.Show();
+                            else
+                                this.Close();
                         }
                         else
                             MessageBox.Show($"{korisnik}, {Resursi.Get(Kljucevi.NalogNijeAktivan)}",
